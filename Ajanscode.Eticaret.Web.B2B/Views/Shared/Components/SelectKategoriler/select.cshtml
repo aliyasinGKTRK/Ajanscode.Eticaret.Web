@@ -1,0 +1,15 @@
+﻿@model KategoriAddDto
+@{ Layout = null;}
+<div class="form-group row">
+    <label asp-for="UstKategoriId" class="control-label col-sm-12 col-md-2 col-form-label"></label>
+    <div class="col-sm-12 col-md-10">
+        <select asp-for="UstKategoriId" class="form-control">
+            <option value="">seçiniz</option>
+            @foreach (var item in Model.Kategoriler)
+            {
+                <option value="@item.Id">@item.KategoriAdi</option>
+            }
+        </select>
+        <span asp-validation-for="UstKategoriId" class="text-danger"></span>
+    </div>
+</div>
